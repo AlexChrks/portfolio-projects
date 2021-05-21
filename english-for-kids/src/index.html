@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English for kids</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon.png">
+    <script src="https://kit.fontawesome.com/53e6e7974c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="blackout hidden_blackout"></div>
+    <div class="success_game_result game_result_field hidden">
+        <img src="./img/happy_bunny.png" alt="happy bunny">
+        <span class="game_result">Well done!</span>
+    </div>
+    <div class="fail_game_result game_result_field hidden">
+        <img src="./img/sad_bunny.png" alt="sad bunny">
+        <span class="errors game_result"></span>
+    </div>
+    <header>
+        <div class="content_wrapper header_wrapper">
+            <div class="burger_icon">
+                <span class="burger_icon_line burger_icon_line_first"></span>
+                <span class="burger_icon_line burger_icon_line_second"></span>
+                <span class="burger_icon_line burger_icon_line_third"></span>
+                <span class="burger_icon_line burger_icon_line_fourth"></span>
+            </div>
+            <div class="mode">
+                <div class="switcher" data="train">
+                    <div class="circle"></div>
+                </div>
+                <span class="mode_text">Train</span>
+
+            </div>
+            <div class="burger_menu hidden_burger">
+                <div class="burger_menu_content">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="content_wrapper">
+            <h2 class="category_name">Categories</h2>
+            <section class="dynamic_content cards_container"></section>
+            <section class="statistics hidden">
+                <table>
+                    <thead>
+                        <tr>
+                            <th class="table_header">Word</th>
+                            <th class="table_header">Translation</th>
+                            <th class="table_header">Category</th>
+                            <th class="table_header">Taps</th>
+                            <th class="table_header">Right</th>
+                            <th class="table_header">Wrong</th>
+                            <th class="table_header">%</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <div class="statistics_buttons_container">
+                    <span>*Recommended "Reset" before using application</span>
+                    <button class="reset_statistics statistics_buttons">Reset</button>
+                    <button class="repeat_difficult_words statistics_buttons">Repeat difficult words</button>
+                    
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="content_wrapper footer_wrapper">
+            <div class="github_link">
+                <a href="https://github.com/AlexChrks">
+                    <img src="./img/github_icon.svg" alt="github icon">
+                    <span>AlexChrks</span>
+                </a>
+                <span class="year">,&nbsp;2020</span>
+            </div>
+            <div class="rs_school_logo">
+                <a href="https://rs.school/js/">
+                    <img src="./img/rs_school_js.svg" alt="Rolling Scopes School">
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

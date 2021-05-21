@@ -1,0 +1,712 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    color: #2b2b2b;
+}
+
+body {
+    margin: 0;
+}
+
+.blackout {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.content_wrapper {
+    width: 90vw; 
+    margin: 0 auto;  
+}
+
+/* ____________________________Header */
+
+.burger_icon {
+    width: 50px;
+    height: 40px;
+    z-index: 998;
+    transition: 0.3 ease-out;
+    position: relative;
+}
+
+.burger_icon:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.3s ease-out;
+    opacity: .5;
+}
+
+.burger_icon:active {
+    opacity: .8;
+}
+
+.burger_icon_line {
+    display: block;
+    height: 4px;
+    width: 50px;
+    transition: 0.3s ease-out;
+    background: #2b2b2b;
+    position: absolute;
+    left: 0;
+}
+
+.burger_icon_line_first {
+    top: 0;
+}
+
+.burger_icon_line_second, .burger_icon_line_third{
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.burger_icon_line_fourth {
+    bottom: 0;
+}
+
+.burger_active .burger_icon_line_first, .burger_active .burger_icon_line_fourth {
+    opacity: 0;
+}
+
+.burger_active .burger_icon_line_second {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.burger_active .burger_icon_line_third {
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.burger_menu {
+    width: 30vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 997;
+    background-color: #dad2c6;
+    animation-name: burger_menu_slide_in;
+    animation-duration: 1s;
+    transition: ease-in;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid gray;
+}
+
+.burger_menu_content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 5vh;
+    padding-top: 80px;
+}
+
+.burger_menu_category {
+    transition: 0.3s ease-out;
+    font-size: 16px;
+    width: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 5px;
+}
+
+.burger_menu_category_image {
+    width: 30px;
+}
+
+.active_burger_menu_category {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.burger_menu_category:hover {
+    transform: translateX(5%);
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    color: #fff;
+}
+
+.burger_menu_category:active {
+    color: rgb(163, 162, 162);
+}
+
+.header_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+/* switcher */
+
+.switcher {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 1px;
+    background-color: #ccc;
+    transition: 0.2s ease-out;
+  }
+
+  .switcher:hover {
+      cursor: pointer;
+      transform: scale(1.1);
+  }
+
+  .switcher:active {
+    opacity: .7;
+}
+  
+  .circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-left: 2px;
+    transition: 0.2s ease-out;
+  }
+
+  .circle_active {
+    transform: translateX(26px);
+    transition: 0.2s ease-out;
+  }
+
+  .switcher_active {
+    background-color: #bbcedd;
+    transition: 0.2s ease-out;
+  }
+
+  .mode {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .mode_text {
+    font-style: italic;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-top: 10px;
+  }
+
+  /* _______________________________________main */
+
+  main {
+      background-color: burlywood;
+  }
+
+  .category_name {
+    font-weight: 700;
+    font-size: 3rem;
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 4vh;
+}
+
+  .cards_container {
+      display: grid;
+      grid-template-columns: 18vw 18vw 18vw 18vw;
+      grid-template-rows: 22vw 22vw;
+      row-gap: 1vh;
+      column-gap: 1vw;
+      justify-content: center;
+      padding: 7vh 0;
+  }
+
+  .card {
+    width: 18vw;
+    height: 22vw;
+    border-radius: 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    overflow: hidden;
+    background-color: #dbd5bc;
+    align-items: center;
+    transition: 0.3s ease-out;
+}
+
+.play_mode_card {
+    background-color: #eae8df;
+    transition: 0.2s ease-out;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    opacity: .8;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.card:active {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.card_image {
+      width: 10vw;
+      height: 10vw;
+}
+
+.disable_card {
+    opacity: 0.4;
+}
+
+.disable_card:hover {
+    cursor: auto;
+    opacity: 0.4;
+    transform: scale(1);
+}
+
+.disable_card:active {
+    box-shadow: none;
+}
+
+.word_wrapper {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button_rotate {
+    width: 25px;
+    height: 25px;
+    color: rgb(180, 180, 180)
+}
+
+.button_rotate:hover {
+    transform: scale(1.12);
+    transition: 0.3s ease-out;
+}
+
+.button_rotate:active {
+    opacity: .5;
+    transition: 0.3s ease-out;
+}
+
+.button_start {
+    width: 100px;
+    height: 35px;
+    background-color: #b4dde0;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    transition: 0.3 ease-out;
+    position: fixed;
+    top: 92vh;
+    right: 5vw;
+}
+
+.button_start:hover {
+    cursor: pointer;
+    transition: 0.3 ease-out;
+    transform: scale(1.05);
+}
+
+.button_start:active {
+    transition: 0.3 ease-out;
+    opacity: .7;
+}
+
+.button_repeat {
+    background-color: rgb(255, 105, 105);
+    color: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button_repeat img {
+    width: 20px;
+}
+
+.play_mode_footer {
+    width: 75vw;
+    margin: 0 auto;
+    padding-bottom: 3vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.right_answers_field {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    column-gap: 10px;
+    position: fixed;
+    top: 92vh;
+}
+
+.answers_images {
+    width: 50px;
+    height: 50px;
+}
+
+.game_result_field {
+    width: 100vw;
+    height: 100vh;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+}
+
+.game_result {
+    padding: 10px;
+    font-size: 4rem;
+    font-family: 'Quicksand', sans-serif;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* __________________________statistics */
+
+.statistics {
+    padding: 10px;
+}
+
+table {
+    border: 2px solid gray;
+    width: 100%;
+}
+
+.table_header {
+    border: 2px solid gray;
+    font-weight: 700;
+    background: #ead9c2;
+    font-size: 1.2rem;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.table_header:hover {
+    transition: 0.3s ease-out;
+    opacity: .5;
+    cursor: pointer;
+}
+
+tr:hover {
+    background-color: rgba(0, 0, 0, .1);
+    transition: 0.3s ease-out;
+}
+
+td {
+    border: 2px solid gray;
+    text-align: center;
+    padding: 5px;
+}
+
+.arrows_images {
+    width: 12px;
+}
+
+.arrows_images:hover {
+    transition: 0.3s ease-out;
+    transform: scale(1.3);
+    opacity: .5;
+}
+
+.statistics_buttons {
+    width: 200px;
+    height: 50px;
+    background-color: #ead9c2;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    outline: none;
+    padding: 0 10px;
+}
+
+.statistics_buttons:hover {
+    transform: scale(1.03);
+    transition: 0.3s ease-out;
+    cursor: pointer;
+}
+
+.statistics_buttons:active {
+    transition: 0.3s ease-out;
+    opacity: .7;
+}
+
+.statistics_buttons_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 10px;
+    padding-top: 10px;
+}
+
+  /* ____________________Footer */
+  footer {
+      background-color: antiquewhite;
+      height: 125px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .footer_wrapper {
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .github_link {
+      display: flex;
+      align-items: center;
+      transition: 0.3s ease-out;
+  }
+
+  .github_link a {
+      text-decoration: none;
+      color: #2b2b2b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .github_link img {
+      padding-right: 5px;
+  }
+
+  .github_link:hover {
+      transform: scale(1.2);
+      transition: 0.3s ease-out;
+  }
+
+  .github_link:active {
+    opacity: .5;
+}
+
+  .rs_school_logo img {
+      width: 100px;
+      transition: 0.3s ease-out;
+  }
+
+  .rs_school_logo img:hover {
+    transform: scale(1.2);
+    transition: 0.3s ease-out;
+  }
+
+  .rs_school_logo img:active {
+    opacity: .5;
+  }
+
+  /* ____________________________________media */
+
+
+@media screen and (max-width: 1280px) {
+    .cards_container {
+        grid-template-columns: 27vw 27vw 27vw;
+        grid-template-rows: 30vw 30vw 30vw;
+    }
+    .burger_menu {
+        width: 40vw;
+    }
+    .card {
+        width: 27vw;
+        height: 30vw;
+    }
+    
+    .card_image {
+          width: 15vw;
+          height: 15vw;
+    }
+    .burger_menu_content {
+        row-gap: 4vh;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cards_container {
+        grid-template-columns: 40vw 40vw;
+        grid-template-rows: 50vw 50vw 50vw 50vw;
+    }
+
+    .burger_menu {
+        width: 50vw;
+    }
+
+    .card {
+        width: 40vw;
+        height: 50vw;
+    }
+    
+    .card_image {
+          width: 20vw;
+          height: 20vw;
+    }
+    .category_name {
+        text-align: center;
+        padding: 3vw 0 0 0;
+    }
+
+    .right_answers_field {
+        column-gap: 3px;
+    }
+    
+    .answers_images {
+        width: 40px;
+        height: 40px;
+    }
+
+    .play_mode_footer {
+        width: 90vw;
+    }
+
+    table, .table_header {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    main {
+        overflow-x: scroll;
+    }
+
+    .cards_container {
+        grid-template-columns: 80vw;
+        grid-template-rows: 83vw 83vw 83vw 83vw 83vw 83vw 83vw 83vw;
+    }
+    .burger_menu {
+        width: 100vw;
+    }
+    .category_name {
+        text-align: center;
+        padding: 3vw 0 0 0;
+    }
+    .card {
+        width: 80vw;
+        height: 83vw;
+    }
+    
+    .card_image {
+          width: 40vw;
+          height: 40vw;
+    }
+
+    .right_answers_field {
+        column-gap: 3px;
+    }
+    
+    .answers_images {
+        width: 20px;
+        height: 20px;
+    }
+
+    .play_mode_footer {
+        width: 90vw;
+    }
+
+    .burger_menu_content {
+        row-gap: 3vh;
+    }
+
+    .game_result_field img {
+        width: 100vw;
+    }
+
+    .game_result {
+        font-size: 3rem;
+    }
+
+    
+    .statistics_buttons_container {
+        flex-direction: column;
+        row-gap: 10px;
+        text-align: center;
+        padding: 10px;
+    }
+
+    table, .table_header {
+        font-size: 0.5rem;
+    }
+
+    .statistics {
+        padding: 0;
+    }
+}
+/* ________________________helpers */
+
+.hidden_burger {
+    animation-name: burger_menu_slide_out;
+    animation-duration: 1s;
+    transform: translateX(-100%);
+}
+
+.blackout {
+    transition: 0.3s ease-out;
+}
+
+.blackout:hover {
+    cursor: pointer;
+    opacity: .9;
+    transition: 0.3s ease-out;
+}
+
+.hidden_blackout {
+    display: none;
+}
+
+.scroll_lock {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.test_card {
+    background-color: cadetblue;
+    border-radius: 25px;
+}
+
+.rotate_card_test {
+    transform: rotateY(180deg);
+}
+
+.hidden {
+    display: none;
+}
+/* ___________________________Animation and keyframes */
+
+
+
+@keyframes burger_menu_slide_in {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes burger_menu_slide_out {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

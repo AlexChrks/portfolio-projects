@@ -1,0 +1,32 @@
+{
+  "name": "english-for-kids",
+  "version": "1.0.0",
+  "description": "Single page application for learning english",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --mode development --watch"
+  },
+  "keywords": [
+    "js",
+    "spa",
+    "rsschool"
+  ],
+  "author": "Alexey Cherkas",
+  "license": "ISC",
+  "dependencies": {
+    "file-loader": "^6.2.0",
+    "image-webpack-loader": "^7.0.1",
+    "webpack": "^5.5.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "css-loader": "^5.0.1",
+    "html-webpack-plugin": "^4.5.0",
+    "style-loader": "^2.0.0"
+  }
+}
