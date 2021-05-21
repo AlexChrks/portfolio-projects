@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <title>momentum</title>
+</head>
+
+<body>
+    <section class="weather">
+        <form>
+            <input type="text" class="inputCity" placeholder="Search for the city..">
+            <button type="submit" class="b_getCity city-button"></button>
+        </form>
+        <div class="weather-content">
+            <div class="city"></div>
+            <div class="weather-container">
+                <div class="icon"></div>
+                <div class="parameters">
+                    <div class="temperature"></div>
+                    <div class="humidity"></div>
+                    <div class="wind"></div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="weather_error_block">
+            <img src="assets/images/crying-cat.png" alt="crying-cat">
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="main_content">
+            <time class='day'>22.55</time>
+            <time class="time"></time>
+            <h1>
+                <span class="greeting"></span>
+                <span class="name" contenteditable="true"></span>
+            </h1>
+            <h2>What Is Your Focus For Today?</h2>
+            <h2 class="focus" contenteditable="true"></h2>
+        </div>
+        <div class="quote-container">
+            <blockquote></blockquote>
+            <figcaption></figcaption>
+        </div>
+    </section>
+    <button class="change-bg">Change image</button>
+    <button class="change-quote">New quote</button>
+    <script src="script.js"></script>
+</body>
+
+</html>
